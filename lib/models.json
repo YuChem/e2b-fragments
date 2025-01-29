@@ -1,6 +1,12 @@
 {
   "models": [
     {
+      "id": "claude-3-5-sonnet-v2",
+      "provider": "LiteLLM",
+      "providerId": "litellm",
+      "name": "Claude 3.5 Sonnet v2"
+    },
+    {
       "id": "o1",
       "provider": "OpenAI",
       "providerId": "openai",

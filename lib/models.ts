@@ -29,6 +29,11 @@ export function getModelClient(model: LLMModel, config: LLMModelConfig) {
   const { apiKey, baseURL } = config
 
   const providerConfigs = {
+    litellm: () =>
+      createOpenAI({
+        apiKey: apiKey || process.env.LITELLM_API_KEY,
+        baseURL: baseURL || process.env.LITELLM_BASE_URL
+      })(modelNameString),
     anthropic: () => createAnthropic({ apiKey, baseURL })(modelNameString),
     openai: () => createOpenAI({ apiKey, baseURL })(modelNameString),
     google: () =>
